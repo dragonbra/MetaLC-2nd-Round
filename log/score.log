@@ -1,0 +1,1077 @@
+Using input_dir: /Users/cyd/Documents/GitHub/metaLC/starting_kit/sample_data/
+Using output_dir: /Users/cyd/Documents/GitHub/metaLC/starting_kit/output/
+Using train_data_dir: /Users/cyd/Documents/GitHub/metaLC/starting_kit/sample_data/train
+Using validation_data_dir: /Users/cyd/Documents/GitHub/metaLC/starting_kit/sample_data/validation
+Using test_data_dir: /Users/cyd/Documents/GitHub/metaLC/starting_kit/sample_data/test
+Using meta_features_dir: /Users/cyd/Documents/GitHub/metaLC/starting_kit/sample_data/dataset_meta_features
+Using algorithms_meta_features_dir: /Users/cyd/Documents/GitHub/metaLC/starting_kit/sample_data/algorithms_meta_features
+Using output_from_ingestion_program_dir: /Users/cyd/Documents/GitHub/metaLC/starting_kit/output/
+
+#====================== Results on dataset: 0 ======================#
+   A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  2  0.1  1000.0        None             None       None        1000.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 1 ======================#
+   A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  2  0.1  1400.0        None             None       None        1400.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 2 ======================#
+   A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  2  0.1  223.45        0.85             0.34       0.27        223.45                                 0.27                     0.50
+1  9  0.1  334.97        0.76             0.33       0.25        558.42                                 0.27                     0.75
+2  0  0.1  263.50        0.86             0.44       0.37        821.92                                 0.37                     0.86
+3  8  0.1  478.08        None             None       None       1300.00                                 0.37                     1.00
+
+alc = 0.15
+
+final score = 0.37
+
+#====================== Results on dataset: 3 ======================#
+   A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  2  0.1  1000.0        None             None       None        1000.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 4 ======================#
+   A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  2  0.1  103.09         0.8             0.25       0.18        103.09                                 0.18                     0.39
+1  9  0.1  355.40        0.76             0.32       0.25        458.49                                 0.25                     0.85
+2  0  0.1  241.51        None             None       None        700.00                                 0.25                     1.00
+
+alc = 0.12
+
+final score = 0.25
+
+#====================== Results on dataset: 5 ======================#
+   A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  2  0.1  100.91        0.87             0.42       0.33        100.91                                 0.33                     0.34
+1  9  0.1  899.09        None             None       None       1000.00                                 0.33                     1.00
+
+alc = 0.22
+
+final score = 0.33
+
+#====================== Results on dataset: 6 ======================#
+   A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  2  0.1  1300.0        None             None       None        1300.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 7 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1  135.04        0.79             0.31       0.21        135.04                                 0.21                     0.44
+1   9  0.1  400.38        0.84             0.28       0.18        535.42                                 0.21                     0.86
+2   0  0.1   94.94        0.88              0.4       0.31        630.36                                 0.31                     0.92
+3   8  0.1   89.29         0.8             0.28       0.18        719.65                                 0.31                     0.96
+4  36  0.1   80.35        None             None       None        800.00                                 0.31                     1.00
+
+alc = 0.13
+
+final score = 0.31
+
+#====================== Results on dataset: 8 ======================#
+   A    p      t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  2  0.1  700.0        None             None       None         700.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 9 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1  219.02        0.95             0.43       0.37        219.02                                 0.37                     0.49
+1   9  0.1  134.17        0.98              0.4       0.33        353.19                                 0.37                     0.62
+2   0  0.1  331.15        0.97             0.46        0.4        684.34                                 0.40                     0.81
+3   8  0.1  221.91        0.76             0.22       0.15        906.25                                 0.40                     0.89
+4  36  0.1  393.75        None             None       None       1300.00                                 0.40                     1.00
+
+alc = 0.19
+
+final score = 0.4
+
+#====================== Results on dataset: 10 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1  258.50        0.83              0.3       0.25        258.50                                 0.25                     0.58
+1   9  0.1  115.35        0.99             0.39       0.33        373.85                                 0.33                     0.69
+2   0  0.1  342.36        0.89             0.37       0.29        716.21                                 0.33                     0.89
+3   8  0.1  202.12        0.64             0.21       0.15        918.33                                 0.33                     0.97
+4  36  0.1   81.67        None             None       None       1000.00                                 0.33                     1.00
+
+alc = 0.13
+
+final score = 0.33
+
+#====================== Results on dataset: 11 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1  103.97        0.83              0.4       0.33        103.97                                 0.33                     0.38
+1   9  0.1  167.65        0.91             0.33       0.26        271.62                                 0.33                     0.64
+2   0  0.1   90.64        0.96             0.46       0.41        362.26                                 0.41                     0.73
+3   8  0.1  270.65        0.78              0.3       0.24        632.91                                 0.41                     0.92
+4  36  0.1  100.82        0.65             0.16       0.09        733.73                                 0.41                     0.97
+5  14  0.1   66.27        None             None       None        800.00                                 0.41                     1.00
+
+alc = 0.23
+
+final score = 0.41
+
+#====================== Results on dataset: 12 ======================#
+   A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  2  0.1  141.32        0.89             0.42       0.32        141.32                                 0.32                     0.45
+1  9  0.1  273.35        0.83             0.38       0.31        414.67                                 0.32                     0.78
+2  0  0.1  207.07        0.84             0.24       0.18        621.74                                 0.32                     0.91
+3  8  0.1  178.26        None             None       None        800.00                                 0.32                     1.00
+
+alc = 0.18
+
+final score = 0.32
+
+#====================== Results on dataset: 13 ======================#
+   A    p      t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  2  0.1  700.0        None             None       None         700.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 14 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1  116.26        0.94             0.35       0.28        116.26                                 0.28                     0.40
+1   9  0.1  134.35         0.9             0.45       0.37        250.61                                 0.37                     0.62
+2   0  0.1   96.62        0.61             0.11       0.03        347.23                                 0.37                     0.72
+3   8  0.1  139.35        0.47             0.03      -0.02        486.58                                 0.37                     0.83
+4  36  0.1  313.42        None             None       None        800.00                                 0.37                     1.00
+
+alc = 0.2
+
+final score = 0.37
+
+#====================== Results on dataset: 15 ======================#
+   A    p      t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  2  0.1  900.0        None             None       None         900.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 16 ======================#
+   A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  2  0.1  130.39        0.98             0.46       0.37        130.39                                 0.37                     0.42
+1  9  0.1  227.24        0.83             0.38       0.31        357.63                                 0.37                     0.70
+2  0  0.1  457.01        0.68             0.28       0.23        814.64                                 0.37                     0.97
+3  8  0.1   85.36        None             None       None        900.00                                 0.37                     1.00
+
+alc = 0.21
+
+final score = 0.37
+
+#====================== Results on dataset: 17 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1  157.20        0.89             0.39       0.32        157.20                                 0.32                     0.40
+1   9  0.1  238.58        0.85             0.42       0.34        395.78                                 0.34                     0.64
+2   0  0.1  239.40        0.64             0.17       0.09        635.18                                 0.34                     0.77
+3   8  0.1  140.57        0.86             0.39       0.31        775.75                                 0.34                     0.83
+4  36  0.1  207.79        0.97             0.43       0.36        983.54                                 0.36                     0.89
+5  14  0.1  156.36        0.91             0.34       0.27       1139.90                                 0.36                     0.94
+6  16  0.1  260.10        None             None       None       1400.00                                 0.36                     1.00
+
+alc = 0.2
+
+final score = 0.36
+
+#====================== Results on dataset: 18 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1  145.33        0.61             0.04      -0.02        145.33                                -0.02                     0.43
+1   9  0.1  125.96        0.73             0.19       0.12        271.29                                 0.12                     0.60
+2   0  0.1  143.22        0.71             0.29       0.22        414.51                                 0.22                     0.72
+3   8  0.1  125.24        0.61             0.12       0.07        539.75                                 0.22                     0.80
+4  36  0.1  107.55        0.91             0.43       0.36        647.30                                 0.36                     0.86
+5  14  0.1  114.69        0.84             0.42       0.32        761.99                                 0.36                     0.91
+6  16  0.1  145.51        0.84              0.3       0.24        907.50                                 0.36                     0.97
+7  33  0.1   92.50        None             None       None       1000.00                                 0.36                     1.00
+
+alc = 0.09
+
+final score = 0.36
+
+#====================== Results on dataset: 19 ======================#
+   A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  2  0.1  1400.0        None             None       None        1400.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 20 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  368.01        0.82             0.32       0.26        368.01                                 0.26                     0.66
+1   2  0.1  118.84        0.78             0.34       0.27        486.85                                 0.27                     0.75
+2  14  0.1  117.43        0.85             0.31       0.24        604.28                                 0.27                     0.81
+3   8  0.1  495.72        None             None       None       1100.00                                 0.27                     1.00
+
+alc = 0.09
+
+final score = 0.27
+
+#====================== Results on dataset: 21 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  207.43        0.67             0.22       0.14        207.43                                 0.14                     0.49
+1   2  0.1  136.66        0.83             0.29       0.23        344.09                                 0.23                     0.63
+2  14  0.1  174.71         0.8              0.3       0.22        518.80                                 0.22                     0.74
+3   8  0.1  174.33         0.9             0.34       0.26        693.13                                 0.26                     0.83
+4  25  0.1  401.60        0.81             0.33       0.28       1094.73                                 0.26                     0.97
+5   3  0.1  105.27        None             None       None       1200.00                                 0.26                     1.00
+
+alc = 0.11
+
+final score = 0.26
+
+#====================== Results on dataset: 22 ======================#
+   A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  9  0.1  1400.0        None             None       None        1400.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 23 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  178.54        0.92              0.4       0.34        178.54                                 0.34                     0.54
+1   2  0.1  176.06         1.0             0.45       0.36        354.60                                 0.36                     0.76
+2  14  0.1  345.40        None             None       None        700.00                                 0.36                     1.00
+
+alc = 0.16
+
+final score = 0.36
+
+#====================== Results on dataset: 24 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  501.85        0.66             0.26       0.16        501.85                                 0.16                     0.78
+1   2  0.1  102.34        0.94             0.47       0.41        604.19                                 0.41                     0.84
+2  14  0.1  120.12        0.79             0.33       0.23        724.31                                 0.41                     0.90
+3   8  0.1  120.14        0.87             0.46       0.39        844.45                                 0.41                     0.94
+4  25  0.1  155.55        None             None       None       1000.00                                 0.41                     1.00
+
+alc = 0.08
+
+final score = 0.41
+
+#====================== Results on dataset: 25 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  372.75        0.94              0.4       0.31        372.75                                 0.31                     0.67
+1   2  0.1  126.82        0.97             0.52       0.45        499.57                                 0.45                     0.75
+2  14  0.1  550.65        0.91             0.34       0.24       1050.22                                 0.45                     0.99
+3   8  0.1   49.78        None             None       None       1100.00                                 0.45                     1.00
+
+alc = 0.14
+
+final score = 0.45
+
+#====================== Results on dataset: 26 ======================#
+   A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  9  0.1  1100.0        None             None       None        1100.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 27 ======================#
+   A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  9  0.1  1200.0        None             None       None        1200.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 28 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  407.81        0.49             0.01      -0.07        407.81                                -0.07                     0.67
+1   2  0.1  303.72        0.57             0.01      -0.05        711.53                                -0.05                     0.84
+2  14  0.1  202.80         0.5             0.01      -0.06        914.33                                -0.06                     0.92
+3   8  0.1  285.67        None             None       None       1200.00                                -0.06                     1.00
+
+alc = -0.02
+
+final score = -0.06
+
+#====================== Results on dataset: 29 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  226.38        0.59             0.16       0.09        226.38                                 0.09                     0.53
+1   2  0.1  162.56        0.95              0.4        0.3        388.94                                 0.30                     0.68
+2  14  0.1  122.96        0.72             0.25       0.18        511.90                                 0.30                     0.76
+3   8  0.1  116.21        0.99             0.42       0.33        628.11                                 0.33                     0.82
+4  25  0.1  375.56         1.0             0.43       0.34       1003.67                                 0.34                     0.97
+5   3  0.1   96.33        None             None       None       1100.00                                 0.34                     1.00
+
+alc = 0.12
+
+final score = 0.34
+
+#====================== Results on dataset: 30 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  469.43         0.9             0.32       0.23        469.43                                 0.23                     0.68
+1   2  0.1  470.23        0.89             0.44       0.37        939.66                                 0.37                     0.88
+2  14  0.1  460.34        None             None       None       1400.00                                 0.37                     1.00
+
+alc = 0.09
+
+final score = 0.37
+
+#====================== Results on dataset: 31 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  115.16        0.61             0.13       0.07        115.16                                 0.07                     0.37
+1   2  0.1  506.01        0.87             0.35       0.26        621.17                                 0.26                     0.85
+2  14  0.1  253.33         1.0             0.47       0.42        874.50                                 0.42                     0.96
+3   8  0.1  125.50        None             None       None       1000.00                                 0.42                     1.00
+
+alc = 0.08
+
+final score = 0.42
+
+#====================== Results on dataset: 32 ======================#
+   A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  9  0.1  1300.0        None             None       None        1300.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 33 ======================#
+   A    p      t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  9  0.1  143.7        0.77             0.24       0.18         143.7                                 0.18                     0.41
+1  2  0.1  956.3        None             None       None        1100.0                                 0.18                     1.00
+
+alc = 0.11
+
+final score = 0.18
+
+#====================== Results on dataset: 34 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  145.11         0.8             0.28       0.22        145.11                                 0.22                     0.39
+1   2  0.1  435.88        0.73             0.22       0.13        580.99                                 0.22                     0.76
+2  14  0.1  260.72        0.78             0.22       0.15        841.71                                 0.22                     0.87
+3   8  0.1  221.09        0.82             0.37       0.31       1062.80                                 0.31                     0.94
+4  25  0.1  237.20        None             None       None       1300.00                                 0.31                     1.00
+
+alc = 0.14
+
+final score = 0.31
+
+#====================== Results on dataset: 35 ======================#
+   A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  9  0.1  1200.0        None             None       None        1200.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 36 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  501.95        0.78             0.18       0.09        501.95                                 0.09                     0.78
+1   2  0.1  335.63        0.96             0.38       0.29        837.58                                 0.29                     0.94
+2  14  0.1  162.42        None             None       None       1000.00                                 0.29                     1.00
+
+alc = 0.03
+
+final score = 0.29
+
+#====================== Results on dataset: 37 ======================#
+   A    p      t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  9  0.1  600.0        None             None       None         600.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 38 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  242.02        0.89             0.46       0.41        242.02                                 0.41                     0.53
+1   2  0.1  245.77        0.89             0.37       0.31        487.79                                 0.41                     0.73
+2  14  0.1  201.76        0.68              0.1       0.01        689.55                                 0.41                     0.83
+3   8  0.1  128.72        0.72             0.15       0.09        818.27                                 0.41                     0.88
+4  25  0.1  152.97        0.71             0.24       0.18        971.24                                 0.41                     0.93
+5   3  0.1  176.09        0.67             0.22       0.16       1147.33                                 0.41                     0.99
+6   6  0.1   52.67        None             None       None       1200.00                                 0.41                     1.00
+
+alc = 0.19
+
+final score = 0.41
+
+#====================== Results on dataset: 39 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  249.70        0.81             0.31       0.25        249.70                                 0.25                     0.54
+1   2  0.1  305.44        0.91             0.41       0.33        555.14                                 0.33                     0.76
+2  14  0.1  123.52        0.87             0.33       0.26        678.66                                 0.33                     0.82
+3   8  0.1  248.41        0.92             0.42       0.35        927.07                                 0.35                     0.92
+4  25  0.1  206.38         0.9             0.41       0.33       1133.45                                 0.35                     0.98
+5   3  0.1   66.55        None             None       None       1200.00                                 0.35                     1.00
+
+alc = 0.14
+
+final score = 0.35
+
+#====================== Results on dataset: 40 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  14  0.1  241.20         0.6             0.11       0.01        241.20                                 0.01                     0.64
+1   2  0.1   80.46        0.92             0.42       0.34        321.66                                 0.34                     0.73
+2   8  0.1   78.31        0.75             0.22       0.12        399.97                                 0.34                     0.80
+3   9  0.1  300.03        None             None       None        700.00                                 0.34                     1.00
+
+alc = 0.09
+
+final score = 0.34
+
+#====================== Results on dataset: 41 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  14  0.1   74.95        0.81             0.33       0.27         74.95                                 0.27                     0.32
+1   2  0.1   91.14        0.92             0.32       0.24        166.09                                 0.27                     0.52
+2   8  0.1  234.89        0.85             0.28        0.2        400.98                                 0.27                     0.80
+3   9  0.1  118.20        0.88             0.38       0.31        519.18                                 0.31                     0.89
+4  25  0.1   87.61        0.72             0.21       0.12        606.79                                 0.31                     0.95
+5  36  0.1   92.30        0.77             0.31       0.23        699.09                                 0.31                     1.00
+6   0  0.1    0.91        None             None       None        700.00                                 0.31                     1.00
+
+alc = 0.19
+
+final score = 0.31
+
+#====================== Results on dataset: 42 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  14  0.1  237.76         0.8             0.25       0.17        237.76                                 0.17                     0.50
+1   2  0.1  175.45        0.95             0.42       0.34        413.21                                 0.34                     0.65
+2   8  0.1  986.79        None             None       None       1400.00                                 0.34                     1.00
+
+alc = 0.14
+
+final score = 0.34
+
+#====================== Results on dataset: 43 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  14  0.1  125.73        0.85             0.27       0.18        125.73                                 0.18                     0.45
+1   2  0.1   79.91        0.73             0.17       0.09        205.64                                 0.18                     0.59
+2   8  0.1  141.32        0.82             0.38       0.29        346.96                                 0.29                     0.75
+3   9  0.1   87.56        0.52             0.03      -0.03        434.52                                 0.29                     0.83
+4  25  0.1   89.32        0.81             0.36       0.31        523.84                                 0.29                     0.90
+5  36  0.1  145.41        0.93             0.38       0.29        669.25                                 0.29                     0.98
+6   0  0.1   30.75        None             None       None        700.00                                 0.29                     1.00
+
+alc = 0.13
+
+final score = 0.29
+
+#====================== Results on dataset: 44 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  14  0.1  101.16        0.52             0.06       0.01        101.16                                 0.01                     0.36
+1   2  0.1  185.04        0.89             0.45       0.39        286.20                                 0.39                     0.63
+2   8  0.1  613.80        None             None       None        900.00                                 0.39                     1.00
+
+alc = 0.15
+
+final score = 0.39
+
+#====================== Results on dataset: 45 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  14  0.1  269.72        0.94             0.37       0.29        269.72                                 0.29                     0.64
+1   2  0.1  117.27         1.0             0.47        0.4        386.99                                 0.40                     0.75
+2   8  0.1  406.25        0.92             0.46       0.39        793.24                                 0.40                     1.00
+3   9  0.1    6.76        None             None       None        800.00                                 0.40                     1.00
+
+alc = 0.13
+
+final score = 0.4
+
+#====================== Results on dataset: 46 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  14  0.1  146.70        0.65             0.19       0.13        146.70                                 0.13                     0.40
+1   2  0.1  436.88        0.65             0.14       0.08        583.58                                 0.13                     0.76
+2   8  0.1  136.64         1.0             0.51       0.42        720.22                                 0.42                     0.82
+3   9  0.1  146.12        0.56             0.07       -0.0        866.34                                 0.42                     0.88
+4  25  0.1  193.16        0.75             0.31       0.22       1059.50                                 0.42                     0.94
+5  36  0.1  240.50        None             None       None       1300.00                                 0.42                     1.00
+
+alc = 0.13
+
+final score = 0.42
+
+#====================== Results on dataset: 47 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  14  0.1  440.26        0.84             0.43       0.37        440.26                                 0.37                     0.68
+1   2  0.1  217.05         0.9             0.34       0.29        657.31                                 0.37                     0.80
+2   8  0.1  216.87        0.92             0.34       0.25        874.18                                 0.37                     0.88
+3   9  0.1  425.82        None             None       None       1300.00                                 0.37                     1.00
+
+alc = 0.12
+
+final score = 0.37
+
+#====================== Results on dataset: 48 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  14  0.1  200.16        0.93             0.36       0.27        200.16                                 0.27                     0.61
+1   2  0.1  109.50        0.55             0.11       0.06        309.66                                 0.27                     0.76
+2   8  0.1   80.40        0.63             0.14       0.07        390.06                                 0.27                     0.84
+3   9  0.1  127.27        0.65             0.16        0.1        517.33                                 0.27                     0.94
+4  25  0.1   82.67        None             None       None        600.00                                 0.27                     1.00
+
+alc = 0.11
+
+final score = 0.27
+
+#====================== Results on dataset: 49 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  14  0.1  202.14        0.89             0.32       0.23        202.14                                 0.23                     0.51
+1   2  0.1  340.29        0.94             0.44       0.35        542.43                                 0.35                     0.80
+2   8  0.1  255.84        0.76             0.33       0.25        798.27                                 0.35                     0.93
+3   9  0.1  149.74        0.85             0.42       0.33        948.01                                 0.35                     0.98
+4  25  0.1   51.99        None             None       None       1000.00                                 0.35                     1.00
+
+alc = 0.14
+
+final score = 0.35
+
+#====================== Results on dataset: 50 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  14  0.1  473.78        0.57             0.16       0.07        473.78                                 0.07                     0.68
+1   2  0.1  157.08        0.76             0.22       0.15        630.86                                 0.15                     0.77
+2   8  0.1  769.14        None             None       None       1400.00                                 0.15                     1.00
+
+alc = 0.04
+
+final score = 0.15
+
+#====================== Results on dataset: 51 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  14  0.1  180.90        0.86             0.45       0.39        180.90                                 0.39                     0.55
+1   2  0.1  109.27        0.94             0.43       0.36        290.17                                 0.39                     0.69
+2   8  0.1   92.97        0.83             0.28       0.22        383.14                                 0.39                     0.79
+3   9  0.1  103.16        0.83             0.26       0.21        486.30                                 0.39                     0.87
+4  25  0.1  213.70        None             None       None        700.00                                 0.39                     1.00
+
+alc = 0.18
+
+final score = 0.39
+
+#====================== Results on dataset: 52 ======================#
+    A    p        t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  14  0.1   164.06        0.64              0.2       0.11        164.06                                 0.11                     0.42
+1   2  0.1  1135.94        None             None       None       1300.00                                 0.11                     1.00
+
+alc = 0.06
+
+final score = 0.11
+
+#====================== Results on dataset: 53 ======================#
+    A    p      t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  14  0.1  900.0        None             None       None         900.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 54 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  14  0.1  706.73        0.82             0.31       0.25        706.73                                 0.25                      0.8
+1   2  0.1  693.27        None             None       None       1400.00                                 0.25                      1.0
+
+alc = 0.05
+
+final score = 0.25
+
+#====================== Results on dataset: 55 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  14  0.1  119.36        0.41             0.01      -0.05        119.36                                -0.05                     0.41
+1   2  0.1  680.64        None             None       None        800.00                                -0.05                     1.00
+
+alc = -0.03
+
+final score = -0.05
+
+#====================== Results on dataset: 56 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  14  0.1  112.70        0.87             0.36       0.31        112.70                                 0.31                     0.37
+1   2  0.1  120.48         1.0             0.46       0.37        233.18                                 0.37                     0.55
+2   8  0.1  501.65        0.67             0.12       0.03        734.83                                 0.37                     0.90
+3   9  0.1  265.17        None             None       None       1000.00                                 0.37                     1.00
+
+alc = 0.22
+
+final score = 0.37
+
+#====================== Results on dataset: 57 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  14  0.1  202.89        0.88             0.36       0.28        202.89                                 0.28                     0.49
+1   2  0.1  241.12        0.88             0.36       0.31        444.01                                 0.31                     0.70
+2   8  0.1  300.58        0.86             0.33       0.23        744.59                                 0.31                     0.85
+3   9  0.1  246.24        0.93             0.35       0.27        990.83                                 0.31                     0.94
+4  25  0.1  125.18        0.88             0.39       0.34       1116.01                                 0.34                     0.98
+5  36  0.1   83.99        None             None       None       1200.00                                 0.34                     1.00
+
+alc = 0.15
+
+final score = 0.34
+
+#====================== Results on dataset: 58 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  14  0.1   68.73        0.59             0.12       0.04         68.73                                 0.04                     0.32
+1   2  0.1  531.27        None             None       None        600.00                                 0.04                     1.00
+
+alc = 0.03
+
+final score = 0.04
+
+#====================== Results on dataset: 59 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  14  0.1  136.32         1.0              0.5       0.41        136.32                                 0.41                     0.43
+1   2  0.1  134.42        0.84             0.36       0.28        270.74                                 0.41                     0.62
+2   8  0.1  629.26        None             None       None        900.00                                 0.41                     1.00
+
+alc = 0.23
+
+final score = 0.41
+
+#====================== Results on dataset: 60 ======================#
+   A    p      t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  9  0.1  800.0        None             None       None         800.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 61 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  367.33        0.86             0.26        0.2        367.33                                 0.20                     0.66
+1   2  0.1  115.02         0.8             0.25       0.19        482.35                                 0.20                     0.74
+2  14  0.1  282.64        0.84             0.35       0.25        764.99                                 0.25                     0.88
+3   0  0.1  281.54        0.98             0.39       0.33       1046.53                                 0.33                     0.98
+4   6  0.1   53.47        None             None       None       1100.00                                 0.33                     1.00
+
+alc = 0.08
+
+final score = 0.33
+
+#====================== Results on dataset: 62 ======================#
+    A    p        t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1   145.92        0.58             0.03      -0.05        145.92                                -0.05                     0.39
+1   2  0.1   182.28        0.58             0.16       0.07        328.20                                 0.07                     0.58
+2  14  0.1  1071.80        None             None       None       1400.00                                 0.07                     1.00
+
+alc = 0.02
+
+final score = 0.07
+
+#====================== Results on dataset: 63 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1   93.52        0.94             0.37       0.28         93.52                                 0.28                     0.39
+1   2  0.1  101.03        0.81             0.35       0.28        194.55                                 0.28                     0.60
+2  14  0.1  105.02        0.75             0.32       0.24        299.57                                 0.28                     0.75
+3   0  0.1  108.81        0.75              0.2       0.13        408.38                                 0.28                     0.86
+4   6  0.1  191.62        None             None       None        600.00                                 0.28                     1.00
+
+alc = 0.17
+
+final score = 0.28
+
+#====================== Results on dataset: 64 ======================#
+   A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  9  0.1  439.52        0.92             0.45       0.36        439.52                                 0.36                     0.68
+1  2  0.1  860.48        None             None       None       1300.00                                 0.36                     1.00
+
+alc = 0.12
+
+final score = 0.36
+
+#====================== Results on dataset: 65 ======================#
+   A    p      t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  9  0.1  800.0        None             None       None         800.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 66 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  225.34         1.0             0.44       0.36        225.34                                 0.36                     0.53
+1   2  0.1  124.92         1.0             0.49       0.41        350.26                                 0.41                     0.65
+2  14  0.1  122.35         0.8             0.31       0.24        472.61                                 0.41                     0.74
+3   0  0.1  125.96        0.87             0.32       0.24        598.57                                 0.41                     0.81
+4   6  0.1  117.00        0.75             0.26       0.17        715.57                                 0.41                     0.86
+5   8  0.1  384.43        None             None       None       1100.00                                 0.41                     1.00
+
+alc = 0.19
+
+final score = 0.41
+
+#====================== Results on dataset: 67 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  162.43        0.58             0.09       0.02        162.43                                 0.02                     0.49
+1   2  0.1  409.28        0.74             0.15       0.07        571.71                                 0.07                     0.88
+2  14  0.1  104.27        0.89             0.31       0.23        675.98                                 0.23                     0.94
+3   0  0.1  124.02        None             None       None        800.00                                 0.23                     1.00
+
+alc = 0.03
+
+final score = 0.23
+
+#====================== Results on dataset: 68 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  134.67        0.91             0.42       0.35        134.67                                 0.35                     0.38
+1   2  0.1  333.74        0.96             0.38        0.3        468.41                                 0.35                     0.70
+2  14  0.1  170.48        0.78             0.35       0.26        638.89                                 0.35                     0.79
+3   0  0.1  439.18         0.8             0.32       0.25       1078.07                                 0.35                     0.94
+4   6  0.1  164.18        0.88             0.29       0.23       1242.25                                 0.35                     0.99
+5   8  0.1   57.75        None             None       None       1300.00                                 0.35                     1.00
+
+alc = 0.22
+
+final score = 0.35
+
+#====================== Results on dataset: 69 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  553.41        0.64             0.14       0.08        553.41                                 0.08                     0.78
+1   2  0.1  279.93        0.85             0.35       0.28        833.34                                 0.28                     0.91
+2  14  0.1  113.00        0.55             0.06        0.0        946.34                                 0.28                     0.95
+3   0  0.1  125.88        0.84             0.38       0.29       1072.22                                 0.29                     0.99
+4   6  0.1   27.78        None             None       None       1100.00                                 0.29                     1.00
+
+alc = 0.04
+
+final score = 0.29
+
+#====================== Results on dataset: 70 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  127.40        0.91              0.4       0.33        127.40                                 0.33                     0.40
+1   2  0.1  171.85        0.92             0.44       0.37        299.25                                 0.37                     0.62
+2  14  0.1  145.81        0.96              0.4       0.31        445.06                                 0.37                     0.74
+3   0  0.1  174.14        0.82             0.41       0.32        619.20                                 0.37                     0.85
+4   6  0.1  176.60        0.87             0.32       0.24        795.80                                 0.37                     0.93
+5   8  0.1  144.65        0.87             0.43       0.37        940.45                                 0.37                     0.98
+6   3  0.1   59.55        None             None       None       1000.00                                 0.37                     1.00
+
+alc = 0.21
+
+final score = 0.37
+
+#====================== Results on dataset: 71 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1   89.43         0.8             0.37       0.31         89.43                                 0.31                     0.38
+1   2  0.1  124.80        0.91             0.31       0.25        214.23                                 0.31                     0.63
+2  14  0.1  305.50        0.45             0.01      -0.08        519.73                                 0.31                     0.95
+3   0  0.1   80.27        None             None       None        600.00                                 0.31                     1.00
+
+alc = 0.19
+
+final score = 0.31
+
+#====================== Results on dataset: 72 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  103.20        0.59             0.05      -0.02        103.20                                -0.02                     0.36
+1   2  0.1  227.89        0.56             0.11       0.02        331.09                                 0.02                     0.68
+2  14  0.1  306.10         1.0             0.42       0.35        637.19                                 0.35                     0.88
+3   0  0.1  262.81        None             None       None        900.00                                 0.35                     1.00
+
+alc = 0.04
+
+final score = 0.35
+
+#====================== Results on dataset: 73 ======================#
+   A    p      t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  9  0.1  600.0        None             None       None         600.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 74 ======================#
+   A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  9  0.1  106.47        0.74             0.31       0.23        106.47                                 0.23                     0.36
+1  2  0.1  893.53        None             None       None       1000.00                                 0.23                     1.00
+
+alc = 0.15
+
+final score = 0.23
+
+#====================== Results on dataset: 75 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  601.77        0.93             0.42       0.36        601.77                                 0.36                     0.79
+1   2  0.1  305.49        0.81             0.41       0.36        907.26                                 0.36                     0.91
+2  14  0.1  150.15        0.85             0.44       0.39       1057.41                                 0.39                     0.96
+3   0  0.1  142.59        None             None       None       1200.00                                 0.39                     1.00
+
+alc = 0.08
+
+final score = 0.39
+
+#====================== Results on dataset: 76 ======================#
+   A    p      t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  9  0.1  900.0        None             None       None         900.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 77 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  158.24        0.76             0.27       0.18        158.24                                 0.18                     0.54
+1   2  0.1   75.32         1.0             0.45       0.37        233.56                                 0.37                     0.66
+2  14  0.1  208.96        0.78              0.3       0.21        442.52                                 0.37                     0.89
+3   0  0.1  157.48        None             None       None        600.00                                 0.37                     1.00
+
+alc = 0.15
+
+final score = 0.37
+
+#====================== Results on dataset: 78 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  124.01        0.93             0.34       0.25        124.01                                 0.25                     0.44
+1   2  0.1   84.46        0.89              0.3       0.22        208.47                                 0.25                     0.59
+2  14  0.1   91.28        0.96             0.42       0.36        299.75                                 0.36                     0.71
+3   0  0.1  105.56        0.78             0.37       0.32        405.31                                 0.36                     0.81
+4   6  0.1   83.13        0.88             0.42       0.37        488.44                                 0.37                     0.87
+5   8  0.1  211.56        None             None       None        700.00                                 0.37                     1.00
+
+alc = 0.17
+
+final score = 0.37
+
+#====================== Results on dataset: 79 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   9  0.1  119.35        0.52             0.09       0.01        119.35                                 0.01                     0.38
+1   2  0.1  143.39        0.83             0.25        0.2        262.74                                 0.20                     0.59
+2  14  0.1  103.06        0.78             0.24       0.15        365.80                                 0.20                     0.68
+3   0  0.1  506.74        0.91             0.39        0.3        872.54                                 0.30                     0.96
+4   6  0.1  127.46        None             None       None       1000.00                                 0.30                     1.00
+
+alc = 0.09
+
+final score = 0.3
+
+#====================== Results on dataset: 80 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1  151.92         0.8             0.32       0.24        151.92                                 0.24                     0.46
+1  14  0.1  131.94         0.7              0.2       0.14        283.86                                 0.24                     0.63
+2   9  0.1  132.93        0.76             0.31       0.22        416.79                                 0.24                     0.75
+3   6  0.1  483.21        None             None       None        900.00                                 0.24                     1.00
+
+alc = 0.13
+
+final score = 0.24
+
+#====================== Results on dataset: 81 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1  240.66        0.81             0.22       0.14        240.66                                 0.14                     0.63
+1  14  0.1   72.39        0.65             0.19       0.13        313.05                                 0.14                     0.72
+2   9  0.1  117.91        0.84             0.31       0.24        430.96                                 0.24                     0.83
+3   6  0.1   88.51        0.69             0.13       0.04        519.47                                 0.24                     0.89
+4   8  0.1  176.92        0.69             0.25        0.2        696.39                                 0.24                     1.00
+5   0  0.1    3.61        None             None       None        700.00                                 0.24                     1.00
+
+alc = 0.07
+
+final score = 0.24
+
+#====================== Results on dataset: 82 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1   60.10         1.0             0.46       0.39         60.10                                 0.39                     0.29
+1  14  0.1  124.55        0.68             0.19        0.1        184.65                                 0.39                     0.59
+2   9  0.1   69.85        0.85             0.37       0.29        254.50                                 0.39                     0.69
+3   6  0.1   80.35        0.74             0.25       0.19        334.85                                 0.39                     0.79
+4   8  0.1  202.45        0.71             0.28       0.19        537.30                                 0.39                     0.96
+5   0  0.1   62.70        None             None       None        600.00                                 0.39                     1.00
+
+alc = 0.28
+
+final score = 0.39
+
+#====================== Results on dataset: 83 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1  100.15        0.57             0.09      -0.01        100.15                                -0.01                     0.34
+1  14  0.1  207.36        0.65             0.25       0.16        307.51                                 0.16                     0.63
+2   9  0.1  334.57        0.77             0.27       0.22        642.08                                 0.22                     0.86
+3   6  0.1  113.29        0.53             0.01      -0.09        755.37                                 0.22                     0.91
+4   8  0.1  100.42        0.95             0.41       0.33        855.79                                 0.33                     0.95
+5   0  0.1  144.21        None             None       None       1000.00                                 0.33                     1.00
+
+alc = 0.07
+
+final score = 0.33
+
+#====================== Results on dataset: 84 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1  435.84        0.77             0.36       0.31        435.84                                 0.31                     0.68
+1  14  0.1  146.94        0.92             0.35       0.29        582.78                                 0.31                     0.76
+2   9  0.1  438.54        0.88             0.44       0.37       1021.32                                 0.37                     0.93
+3   6  0.1  220.14        0.69             0.27       0.18       1241.46                                 0.37                     0.99
+4   8  0.1   58.54        None             None       None       1300.00                                 0.37                     1.00
+
+alc = 0.1
+
+final score = 0.37
+
+#====================== Results on dataset: 85 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1  141.22        0.89             0.41       0.33        141.22                                 0.33                     0.41
+1  14  0.1  116.95        0.77             0.32       0.26        258.17                                 0.33                     0.56
+2   9  0.1  144.87         0.8             0.35       0.25        403.04                                 0.33                     0.69
+3   6  0.1  160.61         1.0             0.42       0.36        563.65                                 0.36                     0.79
+4   8  0.1  536.35        None             None       None       1100.00                                 0.36                     1.00
+
+alc = 0.2
+
+final score = 0.36
+
+#====================== Results on dataset: 86 ======================#
+   A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  2  0.1  1200.0        None             None       None        1200.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 87 ======================#
+   A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  2  0.1  1100.0        None             None       None        1100.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 88 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1  233.44        0.92             0.36       0.26        233.44                                 0.26                     0.63
+1  14  0.1   93.08        0.79             0.27       0.19        326.52                                 0.26                     0.73
+2   9  0.1  117.10        0.73             0.31       0.23        443.62                                 0.26                     0.84
+3   6  0.1  241.69        0.95             0.43       0.38        685.31                                 0.38                     0.99
+4   8  0.1   14.69        None             None       None        700.00                                 0.38                     1.00
+
+alc = 0.1
+
+final score = 0.38
+
+#====================== Results on dataset: 89 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1  339.15        0.86             0.42       0.35        339.15                                 0.35                     0.66
+1  14  0.1  167.76        0.83             0.32       0.26        506.91                                 0.35                     0.78
+2   9  0.1  257.25        0.95             0.45       0.37        764.16                                 0.37                     0.91
+3   6  0.1  129.73        0.87             0.38        0.3        893.89                                 0.37                     0.96
+4   8  0.1  106.11        None             None       None       1000.00                                 0.37                     1.00
+
+alc = 0.12
+
+final score = 0.37
+
+#====================== Results on dataset: 90 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1  708.15        0.87             0.36        0.3        708.15                                  0.3                     0.80
+1  14  0.1  233.69         0.8             0.33       0.27        941.84                                  0.3                     0.88
+2   9  0.1  142.28        0.68             0.21       0.15       1084.12                                  0.3                     0.92
+3   6  0.1  315.88        None             None       None       1400.00                                  0.3                     1.00
+
+alc = 0.06
+
+final score = 0.3
+
+#====================== Results on dataset: 91 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1  117.80        0.92             0.49        0.4        117.80                                  0.4                     0.43
+1  14  0.1   73.51        0.86             0.37        0.3        191.31                                  0.4                     0.56
+2   9  0.1  508.69        None             None       None        700.00                                  0.4                     1.00
+
+alc = 0.23
+
+final score = 0.4
+
+#====================== Results on dataset: 92 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1  129.77        0.75             0.18        0.1        129.77                                 0.10                     0.42
+1  14  0.1   94.08        0.65             0.19       0.13        223.85                                 0.13                     0.56
+2   9  0.1  676.15        None             None       None        900.00                                 0.13                     1.00
+
+alc = 0.07
+
+final score = 0.13
+
+#====================== Results on dataset: 93 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1   80.78        0.92             0.46        0.4         80.78                                  0.4                     0.34
+1  14  0.1  141.63        0.69             0.24       0.19        222.41                                  0.4                     0.61
+2   9  0.1  108.29        0.87             0.44       0.36        330.70                                  0.4                     0.74
+3   6  0.1  126.55        0.66              0.1       0.01        457.25                                  0.4                     0.85
+4   8  0.1  120.63        0.79             0.22       0.15        577.88                                  0.4                     0.93
+5   0  0.1  122.12        None             None       None        700.00                                  0.4                     1.00
+
+alc = 0.26
+
+final score = 0.4
+
+#====================== Results on dataset: 94 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1  406.14        0.88             0.41       0.33        406.14                                 0.33                     0.77
+1  14  0.1  393.86        None             None       None        800.00                                 0.33                     1.00
+
+alc = 0.08
+
+final score = 0.33
+
+#====================== Results on dataset: 95 ======================#
+    A    p        t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1   138.08        0.75             0.25       0.15        138.08                                 0.15                     0.38
+1  14  0.1  1161.92        None             None       None       1300.00                                 0.15                     1.00
+
+alc = 0.09
+
+final score = 0.15
+
+#====================== Results on dataset: 96 ======================#
+   A    p      t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  2  0.1  800.0        None             None       None         800.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 97 ======================#
+   A    p      t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0  2  0.1  900.0        None             None       None         900.0                                None                      1.0
+
+alc = 0.0
+
+final score = 0
+
+#====================== Results on dataset: 98 ======================#
+    A    p       t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1  107.24        0.95             0.52       0.45        107.24                                 0.45                     0.36
+1  14  0.1  892.76        None             None       None       1000.00                                 0.45                     1.00
+
+alc = 0.29
+
+final score = 0.45
+
+#====================== Results on dataset: 99 ======================#
+    A    p        t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
+0   2  0.1   243.11        0.85              0.4       0.34        243.11                                 0.34                     0.51
+1  14  0.1   143.01        0.76             0.27       0.18        386.12                                 0.34                     0.63
+2   9  0.1  1013.88        None             None       None       1400.00                                 0.34                     1.00
+
+alc = 0.17
+
+final score = 0.34
+
+[+] Write agent's learning curve visualizations to /Users/cyd/Documents/GitHub/metaLC/starting_kit/output/scores.html
+
+######################################## FINAL AVERAGE RESULTS ########################################
+
+average_ALC = 0.1
+
+average_final_score = 0.24
+
+[+]Finished running scoring program

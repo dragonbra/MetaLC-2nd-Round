@@ -12,6 +12,10 @@ class Agent():
 
         """
         ### TO BE IMPLEMENTED ###
+        self.best_index = 0
+        self.best_algorithms = []
+        self.number_of_algorithms = number_of_algorithms
+        self.best_times = [0 for _ in range(number_of_algorithms)]
         pass
 
     def reset(self, dataset_meta_features, algorithms_meta_features):
@@ -104,7 +108,17 @@ class Agent():
         """
 
         ### TO BE IMPLEMENTED ###
-        pass
+        for dataset_name in test_learning_curves.keys():
+            dataset = test_learning_curves[dataset_name]
+            max_score, best_algorithm = 0, 0
+            for i in range(self.number_of_algorithms):
+                curve = dataset[str(i)]
+                if len(curve.scores) and curve.scores[-1] > max_score:
+                    max_score, best_algorithm = curve.scores[-1], i
+            self.best_times[best_algorithm] += 1
+        # print("DEBUG:", self.best_times)
+        # self.best = self.best_times.index(max(self.best_times))
+        self.best_algorithms = sorted(range(len(self.best_times)), key=lambda k: self.best_times[k], reverse=True)
 
     def suggest(self, observation):
         """
@@ -135,4 +149,12 @@ class Agent():
         (9, 0.9)
         """
         ### TO BE IMPLEMENTED ###
-        pass
+        if observation == None:
+            self.best_index = 0
+        action = (self.best_algorithms[self.best_index], 0.1)
+
+        self.best_index += 1
+        if self.best_index == self.number_of_algorithms:
+            self.best_index = 0
+
+        return action
