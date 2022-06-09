@@ -16,9 +16,6 @@ class Agent():
         ### TO BE IMPLEMENTED ###
         self.number_of_algorithms = number_of_algorithms
 
-        self.fastest_index = 0
-        self.fast_times = [0 for _ in range(number_of_algorithms)]
-
         self.best_index = 0
         self.best_algorithms = []
         self.best_times = [0 for _ in range(number_of_algorithms)]
@@ -116,20 +113,18 @@ class Agent():
         ### TO BE IMPLEMENTED ###
         for dataset_name in test_learning_curves.keys():
             dataset = test_learning_curves[dataset_name]
-            max_score, best_algorithm = 0, 0
-            min_time, fastest_algorithm = 1000000, 0
+            
+            max_ratio, best_algorithm = 0, 0
             for i in range(self.number_of_algorithms):
                 curve = dataset[str(i)]
-                if len(curve.scores) and curve.scores[-1] > max_score:
-                    max_score, best_algorithm = curve.scores[-1], i
-                if len(curve.times) and curve.times[0] < min_time:
-                    min_time, fastest_algorithm = curve.times[0], i
+                if len(curve.scores) <= 1:
+                    continue
+                ratio = curve.scores[1] / curve.times[1]
+                if ratio > max_ratio:
+                    max_ratio, best_algorithm = ratio, i
             self.best_times[best_algorithm] += 1
-            self.fast_times[fastest_algorithm] += 1
-        # print("DEBUG:", self.best_times)
-        # self.best = self.best_times.index(max(self.best_times))
+            
         self.best_algorithms = sorted(range(len(self.best_times)), key=lambda k: self.best_times[k], reverse=True)
-        self.fastest_index = self.fast_times.index(max(self.fast_times))
 
     def suggest(self, observation):
         """
@@ -162,10 +157,10 @@ class Agent():
         ### TO BE IMPLEMENTED ###
         if observation == None:
             self.best_index = 0
-            return (self.fastest_index, 0.1)
-        else:
-            action = (self.best_algorithms[self.best_index], random.choice([0.1, 0.2]))
-            self.best_index += 1
-            if self.best_index == self.number_of_algorithms:
-                self.best_index = 0
-            return action
+            # return (self.fastest_index, 0.1)
+
+        action = (self.best_algorithms[self.best_index], random.choice([0.1, 0.2]))
+        self.best_index += 1
+        if self.best_index == self.number_of_algorithms:
+            self.best_index = 0
+        return action
