@@ -113,8 +113,8 @@ class Agent():
             max_score, best_algorithm = 0, 0
             for i in range(self.number_of_algorithms):
                 curve = dataset[str(i)]
-                if len(curve.scores) and curve.scores[-1] > max_score:
-                    max_score, best_algorithm = curve.scores[-1], i
+                if len(curve.scores) and curve.scores[0] > max_score:
+                    max_score, best_algorithm = curve.scores[0], i
             self.best_times[best_algorithm] += 1
         # print("DEBUG:", self.best_times)
         # self.best = self.best_times.index(max(self.best_times))
@@ -151,7 +151,8 @@ class Agent():
         ### TO BE IMPLEMENTED ###
         if observation == None:
             self.best_index = 0
-        action = (self.best_algorithms[self.best_index], 0.1)
+        random.seed(random.randint(1, 10000))
+        action = (self.best_algorithms[self.best_index], random.choice([0.1, 0.2]))
 
         self.best_index += 1
         if self.best_index == self.number_of_algorithms:
