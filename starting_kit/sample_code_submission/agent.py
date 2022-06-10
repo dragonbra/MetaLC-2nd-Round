@@ -68,9 +68,9 @@ class Agent():
          '39': {'meta_feature_0': '2', 'meta_feature_1': '2', meta_feature_2 : '0.01'},
          }
         """
-
         ### TO BE IMPLEMENTED ###
-        pass
+        self.dataset_meta_features = dataset_meta_features
+        self.algorithms_meta_features = algorithms_meta_features
 
     def meta_train(self, datasets_meta_features, algorithms_meta_features, train_learning_curves, validation_learning_curves, test_learning_curves):
         """
@@ -117,9 +117,11 @@ class Agent():
             max_ratio, best_algorithm = 0, 0
             for i in range(self.number_of_algorithms):
                 curve = dataset[str(i)]
-                if len(curve.scores) <= 1:
+                if len(curve.scores) == 0:
                     continue
-                ratio = curve.scores[1] / curve.times[1]
+                # ratio = (curve.scores[1] + curve.scores[0]) / (curve.times[1] + curve.times[0])
+                # ratio = (curve.scores[1]) / (curve.times[1])
+                ratio = (curve.scores[0]) / (curve.times[0])
                 if ratio > max_ratio:
                     max_ratio, best_algorithm = ratio, i
             self.best_times[best_algorithm] += 1
@@ -159,6 +161,7 @@ class Agent():
             self.best_index = 0
             # return (self.fastest_index, 0.1)
 
+        print("DEBUG:", self.dataset_meta_features)
         action = (self.best_algorithms[self.best_index], random.choice([0.1, 0.2]))
         self.best_index += 1
         if self.best_index == self.number_of_algorithms:
