@@ -113,17 +113,21 @@ class Agent():
         ### TO BE IMPLEMENTED ###
         for dataset_name in test_learning_curves.keys():
             dataset = test_learning_curves[dataset_name]
+            dataset_train = train_learning_curves[dataset_name]
+            dataset_validation = validation_learning_curves[dataset_name]
             
             max_ratio, best_algorithm = 0, 0
-            for i in range(self.number_of_algorithms):
-                curve = dataset[str(i)]
+            for alg_name in dataset.keys():
+                curve = dataset[alg_name]
+                curve_train = dataset_train[alg_name]
+                curve_validation = dataset_validation[alg_name]
                 if len(curve.scores) == 0:
                     continue
-                # ratio = (curve.scores[1] + curve.scores[0]) / (curve.times[1] + curve.times[0])
-                # ratio = (curve.scores[1]) / (curve.times[1])
-                ratio = (curve.scores[0]) / (curve.times[0])
+                # select the first point to calculate
+                ratio = curve.scores[0] / curve.times[0] + curve_train.scores[0] / curve_train.times[0] \
+                    + curve_validation.scores[0] / curve_validation.times[0]
                 if ratio > max_ratio:
-                    max_ratio, best_algorithm = ratio, i
+                    max_ratio, best_algorithm = ratio, int(alg_name)
             self.best_times[best_algorithm] += 1
             
         self.best_algorithms = sorted(range(len(self.best_times)), key=lambda k: self.best_times[k], reverse=True)
@@ -161,7 +165,7 @@ class Agent():
             self.best_index = 0
             # return (self.fastest_index, 0.1)
 
-        print("DEBUG:", self.dataset_meta_features)
+        # print("DEBUG:", self.dataset_meta_features)
         action = (self.best_algorithms[self.best_index], random.choice([0.1, 0.2]))
         self.best_index += 1
         if self.best_index == self.number_of_algorithms:
