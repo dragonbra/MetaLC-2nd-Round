@@ -29,6 +29,8 @@ We provided two sample agents for references:
 ```console
 cd starting_kit/
 
+source metaLC-challenge/bin/activate
+
 python3 ingestion_program/ingestion.py > ../log/ingestion.log
 
 python3 scoring_program/score.py > ../log/score.log
