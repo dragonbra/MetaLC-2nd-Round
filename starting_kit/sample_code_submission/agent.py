@@ -20,6 +20,9 @@ class Agent():
         self.best_times = [0 for _ in range(number_of_algorithms)]
 
         self.ratio_list = []
+        self.ratio_sum = [0 for _ in range(number_of_algorithms)]
+        self.datasets_meta_features = None
+        self.algorithms_meta_features = None
         pass
 
     def reset(self, dataset_meta_features, algorithms_meta_features):
@@ -69,8 +72,22 @@ class Agent():
          '39': {'meta_feature_0': '2', 'meta_feature_1': '2', meta_feature_2 : '0.01'},
          }
         """
-        self.dataset_meta_features = dataset_meta_features
-        self.algorithms_meta_features = algorithms_meta_features
+        rank_base = 1
+        keywords = ['task', 'target_type', 'feat_type', 'metric','time_budget', 'has_categorical', 'has_missing', 'is_sparse']
+        keywords_weight = [2, 1, 1, 1, 0.2, 0.5, 0.5, 0.5]
+        self.ratio_sum = [0 for _ in range(self.number_of_algorithms)]
+        for dataset_idx, dataset_name in enumerate(self.datasets_meta_features.keys()):
+            dataset_rank = rank_base
+            for idx, feat in enumerate(keywords):
+                if self.datasets_meta_features[dataset_name][feat] == dataset_meta_features[feat]:
+                    dataset_rank += keywords_weight[idx]
+                    pass
+            for alg_idx in range(self.number_of_algorithms):
+                self.ratio_sum[alg_idx] += dataset_rank * self.ratio_list[dataset_idx][alg_idx]
+        
+        self.best_algorithms = sorted(range(len(self.ratio_sum)), key=lambda k: self.ratio_sum[k], reverse=True)
+        # print("DEBUG: ", self.ratio_sum)
+        # print("DEBUG: ", self.best_algorithms)
 
     def meta_train(self, datasets_meta_features, algorithms_meta_features, train_learning_curves, validation_learning_curves, test_learning_curves):
         """
@@ -109,29 +126,41 @@ class Agent():
         >>> validation_learning_curves['dataset01']['0'].scores
         [0.6465293662860659, 0.6465293748988077, 0.6465293748988145, 0.6465293748988159, 0.6465293748988159]
         """
-        self.ratio_list = [[] for _ in range(len(datasets_meta_features))]
+        self.datasets_meta_features = datasets_meta_features
+        self.algorithms_meta_features = algorithms_meta_features
+        self.ratio_list = [[0 for __ in range(self.number_of_algorithms)] for _ in range(len(datasets_meta_features))]
 
-        for dataset_name in test_learning_curves.keys():
+        for dataset_idx, dataset_name in enumerate(test_learning_curves.keys()):
             dataset = test_learning_curves[dataset_name]
             dataset_train = train_learning_curves[dataset_name]
             dataset_validation = validation_learning_curves[dataset_name]
             
             max_ratio, best_algorithm = 0, 0
-            for alg_name in dataset.keys():
+            for alg_idx, alg_name in enumerate(dataset.keys()):
                 curve = dataset[alg_name]
                 curve_train = dataset_train[alg_name]
                 curve_validation = dataset_validation[alg_name]
+
                 idx = 1
                 if len(curve.scores) <= idx:
                     continue
                 # select the second point to calculate
                 ratio = curve.scores[idx] / curve.times[idx] + curve_train.scores[idx] / curve_train.times[idx] \
                     + curve_validation.scores[idx] / curve_validation.times[idx]
+                self.ratio_list[dataset_idx][alg_idx] = ratio
+
                 if ratio > max_ratio:
                     max_ratio, best_algorithm = ratio, int(alg_name)
+
             self.best_times[best_algorithm] += 1
+            # normalization on ratio_sum
+            for alg_idx in range(self.number_of_algorithms):
+                self.ratio_list[dataset_idx][alg_idx] /= max_ratio
+                # self.ratio_sum[alg_idx] += self.ratio_list[dataset_idx][alg_idx]
+                pass
             
         self.best_algorithms = sorted(range(len(self.best_times)), key=lambda k: self.best_times[k], reverse=True)
+        # self.best_algorithms = sorted(range(len(self.ratio_sum)), key=lambda k: self.ratio_sum[k], reverse=True)
 
     def suggest(self, observation):
         """
