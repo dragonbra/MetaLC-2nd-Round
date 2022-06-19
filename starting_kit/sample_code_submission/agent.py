@@ -13,12 +13,13 @@ class Agent():
             The number of algorithms
 
         """
-        ### TO BE IMPLEMENTED ###
         self.number_of_algorithms = number_of_algorithms
 
         self.best_index = 0
         self.best_algorithms = []
         self.best_times = [0 for _ in range(number_of_algorithms)]
+
+        self.ratio_list = []
         pass
 
     def reset(self, dataset_meta_features, algorithms_meta_features):
@@ -68,7 +69,6 @@ class Agent():
          '39': {'meta_feature_0': '2', 'meta_feature_1': '2', meta_feature_2 : '0.01'},
          }
         """
-        ### TO BE IMPLEMENTED ###
         self.dataset_meta_features = dataset_meta_features
         self.algorithms_meta_features = algorithms_meta_features
 
@@ -109,8 +109,8 @@ class Agent():
         >>> validation_learning_curves['dataset01']['0'].scores
         [0.6465293662860659, 0.6465293748988077, 0.6465293748988145, 0.6465293748988159, 0.6465293748988159]
         """
+        self.ratio_list = [[] for _ in range(len(datasets_meta_features))]
 
-        ### TO BE IMPLEMENTED ###
         for dataset_name in test_learning_curves.keys():
             dataset = test_learning_curves[dataset_name]
             dataset_train = train_learning_curves[dataset_name]
@@ -121,11 +121,12 @@ class Agent():
                 curve = dataset[alg_name]
                 curve_train = dataset_train[alg_name]
                 curve_validation = dataset_validation[alg_name]
-                if len(curve.scores) == 0:
+                idx = 1
+                if len(curve.scores) <= idx:
                     continue
-                # select the first point to calculate
-                ratio = curve.scores[0] / curve.times[0] + curve_train.scores[0] / curve_train.times[0] \
-                    + curve_validation.scores[0] / curve_validation.times[0]
+                # select the second point to calculate
+                ratio = curve.scores[idx] / curve.times[idx] + curve_train.scores[idx] / curve_train.times[idx] \
+                    + curve_validation.scores[idx] / curve_validation.times[idx]
                 if ratio > max_ratio:
                     max_ratio, best_algorithm = ratio, int(alg_name)
             self.best_times[best_algorithm] += 1
@@ -166,7 +167,7 @@ class Agent():
             # return (self.fastest_index, 0.1)
 
         # print("DEBUG:", self.dataset_meta_features)
-        action = (self.best_algorithms[self.best_index], random.choice([0.1, 0.2]))
+        action = (self.best_algorithms[self.best_index], random.choices([0.1, 0.2], weights=[8, 2], k=1)[0])
         self.best_index += 1
         if self.best_index == self.number_of_algorithms:
             self.best_index = 0
