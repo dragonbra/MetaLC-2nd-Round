@@ -86,7 +86,7 @@ class Agent():
                 self.ratio_sum[alg_idx] += dataset_rank * self.ratio_list[dataset_idx][alg_idx]
         
         self.best_algorithms = sorted(range(len(self.ratio_sum)), key=lambda k: self.ratio_sum[k], reverse=True)
-        # print("DEBUG: ", self.ratio_sum)
+        # print("DEBUG: Time_budget ", dataset_meta_features['time_budget'])
         # print("DEBUG: ", self.best_algorithms)
 
     def meta_train(self, datasets_meta_features, algorithms_meta_features, train_learning_curves, validation_learning_curves, test_learning_curves):
@@ -158,9 +158,9 @@ class Agent():
                 self.ratio_list[dataset_idx][alg_idx] /= max_ratio
                 # self.ratio_sum[alg_idx] += self.ratio_list[dataset_idx][alg_idx]
                 pass
-            
+
+        # sort best algorithms based on its best performance times    
         self.best_algorithms = sorted(range(len(self.best_times)), key=lambda k: self.best_times[k], reverse=True)
-        # self.best_algorithms = sorted(range(len(self.ratio_sum)), key=lambda k: self.ratio_sum[k], reverse=True)
 
     def suggest(self, observation):
         """
@@ -196,7 +196,10 @@ class Agent():
             # return (self.fastest_index, 0.1)
 
         # print("DEBUG:", self.dataset_meta_features)
-        action = (self.best_algorithms[self.best_index], random.choices([0.1, 0.2], weights=[8, 2], k=1)[0])
+        A = self.best_algorithms[self.best_index]
+        p = random.choices([0.1, 0.2, 0.3, 0.4, 0.5], \
+            weights=[20 - self.best_index * 4, 5 - self.best_index, self.best_index, self.best_index // 2, self.best_index // 3])[0]
+        action = (A, p)
         self.best_index += 1
         if self.best_index == self.number_of_algorithms:
             self.best_index = 0
