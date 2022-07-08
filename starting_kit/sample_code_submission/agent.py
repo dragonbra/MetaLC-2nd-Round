@@ -74,6 +74,21 @@ class Agent():
         self.dataset_meta_features = dataset_meta_features
         self.algorithms_meta_features = algorithms_meta_features
 
+        rank_base = 1
+        keywords = ['task', 'target_type', 'feat_type', 'metric','time_budget', 'has_categorical', 'has_missing', 'is_sparse']
+        keywords_weight = [2, 1, 1, 1, 0.2, 0.5, 0.5, 0.5]
+        self.ratio_sum = [0 for _ in range(self.number_of_algorithms)]
+        for dataset_idx, dataset_name in enumerate(self.datasets_meta_features.keys()):
+            dataset_rank = rank_base
+            for idx, feat in enumerate(keywords):
+                if self.datasets_meta_features[dataset_name][feat] == dataset_meta_features[feat]:
+                    dataset_rank += keywords_weight[idx]
+                    pass
+            for alg_idx in range(self.number_of_algorithms):
+                self.ratio_sum[alg_idx] += dataset_rank * self.ratio_list[dataset_idx][alg_idx]
+        
+        self.best_algorithms_ratio = sorted(range(len(self.ratio_sum)), key=lambda k: self.ratio_sum[k], reverse=True)
+
     def meta_train(self, datasets_meta_features, algorithms_meta_features, train_learning_curves, validation_learning_curves, test_learning_curves):
         """
         Start meta-training the agent
@@ -111,15 +126,18 @@ class Agent():
         >>> validation_learning_curves['dataset01']['0'].scores
         [0.6465293662860659, 0.6465293748988077, 0.6465293748988145, 0.6465293748988159, 0.6465293748988159]
         """
+        self.datasets_meta_features = datasets_meta_features
+        self.algorithms_meta_features = algorithms_meta_features
+        self.ratio_list = [[0 for __ in range(self.number_of_algorithms)] for _ in range(len(datasets_meta_features))]
 
-        for dataset_name in test_learning_curves.keys():
+        for dataset_idx, dataset_name in enumerate(test_learning_curves.keys()):
             dataset = test_learning_curves[dataset_name]
             dataset_train = train_learning_curves[dataset_name]
             dataset_validation = validation_learning_curves[dataset_name]
             
             max_ratio, best_algorithm_ratio = 0, 0
             max_final_score, best_algorithm_final_score = 0, 0
-            for alg_name in dataset.keys():
+            for alg_idx, alg_name in enumerate(dataset.keys()):
                 curve = dataset[alg_name]
                 curve_train = dataset_train[alg_name]
                 curve_validation = dataset_validation[alg_name]
@@ -130,6 +148,7 @@ class Agent():
                 # select the second point to calculate
                 ratio = curve.scores[idx] / curve.times[idx] + curve_train.scores[idx] / curve_train.times[idx] \
                     + curve_validation.scores[idx] / curve_validation.times[idx]
+                self.ratio_list[dataset_idx][alg_idx] = ratio
                 if ratio > max_ratio:
                     max_ratio, best_algorithm_ratio = ratio, int(alg_name)
 
@@ -138,6 +157,10 @@ class Agent():
                     max_final_score, best_algorithm_final_score = final_score, int(alg_name)
             self.best_times_ratio[best_algorithm_ratio] += 1
             self.best_times_final_score[best_algorithm_final_score] += 1
+
+            # normalization on ratio_sum
+            for alg_idx in range(self.number_of_algorithms):
+                self.ratio_list[dataset_idx][alg_idx] /= max_ratio
 
         self.best_algorithms_ratio = sorted(range(len(self.best_times_ratio)), key=lambda k: self.best_times_ratio[k], reverse=True)
         self.best_algorithms_final_score = sorted(range(len(self.best_times_final_score)), key=lambda k: self.best_times_final_score[k], reverse=True)
