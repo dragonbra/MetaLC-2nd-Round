@@ -29,9 +29,11 @@ We provided two sample agents for references:
 ```console
 cd starting_kit/
 
-python ingestion_program/ingestion.py
+source metaLC-challenge/bin/activate
 
-python scoring_program/score.py
+python3 ingestion_program/ingestion.py > ../log/ingestion.log
+
+python3 scoring_program/score.py > ../log/score.log
 ```
 
 The results and visualizations will be written to these following files:

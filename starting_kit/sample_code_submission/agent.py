@@ -1,5 +1,7 @@
 import random
 import numpy as np
+
+
 class Agent():
     def __init__(self, number_of_algorithms):
         """
@@ -11,8 +13,16 @@ class Agent():
             The number of algorithms
 
         """
-        ### TO BE IMPLEMENTED ###
-        pass
+        self.number_of_algorithms = number_of_algorithms
+
+        self.suggest_times = 0
+        self.algorithm_index = 0
+        self.best_algorithms_ratio = []
+        self.best_algorithms_final_score = []
+        self.best_times_ratio = [0 for _ in range(number_of_algorithms)]
+        self.best_times_final_score = [0 for _ in range(number_of_algorithms)]
+
+        self.switch_final_score = False
 
     def reset(self, dataset_meta_features, algorithms_meta_features):
         """
@@ -61,9 +71,8 @@ class Agent():
          '39': {'meta_feature_0': '2', 'meta_feature_1': '2', meta_feature_2 : '0.01'},
          }
         """
-
-        ### TO BE IMPLEMENTED ###
-        pass
+        self.dataset_meta_features = dataset_meta_features
+        self.algorithms_meta_features = algorithms_meta_features
 
     def meta_train(self, datasets_meta_features, algorithms_meta_features, train_learning_curves, validation_learning_curves, test_learning_curves):
         """
@@ -103,8 +112,39 @@ class Agent():
         [0.6465293662860659, 0.6465293748988077, 0.6465293748988145, 0.6465293748988159, 0.6465293748988159]
         """
 
-        ### TO BE IMPLEMENTED ###
-        pass
+        for dataset_name in test_learning_curves.keys():
+            dataset = test_learning_curves[dataset_name]
+            dataset_train = train_learning_curves[dataset_name]
+            dataset_validation = validation_learning_curves[dataset_name]
+            
+            max_ratio, best_algorithm_ratio = 0, 0
+            max_final_score, best_algorithm_final_score = 0, 0
+            for alg_name in dataset.keys():
+                curve = dataset[alg_name]
+                curve_train = dataset_train[alg_name]
+                curve_validation = dataset_validation[alg_name]
+
+                idx = 1
+                if len(curve.scores) <= idx:
+                    continue
+                # select the second point to calculate
+                ratio = curve.scores[idx] / curve.times[idx] + curve_train.scores[idx] / curve_train.times[idx] \
+                    + curve_validation.scores[idx] / curve_validation.times[idx]
+                if ratio > max_ratio:
+                    max_ratio, best_algorithm_ratio = ratio, int(alg_name)
+
+                final_score = curve.scores[-1]
+                if final_score > max_final_score:
+                    max_final_score, best_algorithm_final_score = final_score, int(alg_name)
+            self.best_times_ratio[best_algorithm_ratio] += 1
+            self.best_times_final_score[best_algorithm_final_score] += 1
+
+        self.best_algorithms_ratio = sorted(range(len(self.best_times_ratio)), key=lambda k: self.best_times_ratio[k], reverse=True)
+        self.best_algorithms_final_score = sorted(range(len(self.best_times_final_score)), key=lambda k: self.best_times_final_score[k], reverse=True)
+        
+        self.p_list = [0.1, 0.1, 0.1, 0.2, 0.2, 0.3, 0.4, 0.5, 0.8, 1.0]
+        for i in range(len(self.p_list), self.number_of_algorithms):
+            self.p_list.append(1.0)
 
     def suggest(self, observation):
         """
@@ -135,4 +175,24 @@ class Agent():
         (9, 0.9)
         """
         ### TO BE IMPLEMENTED ###
-        pass
+        if observation == None:
+            self.suggest_times = 0
+            self.algorithm_index = 0
+            # return (self.fastest_index, 0.1)
+        else:
+            # TODO: decide p
+            if not self.switch_final_score and self.p_list[self.suggest_times] == 1.0:
+                self.switch_final_score = True
+                # self.algorithm_index = 0
+
+        # print("DEBUG:", self.dataset_meta_features)
+        # A = self.best_algorithms_ratio[self.algorithm_index]
+        p = self.p_list[self.suggest_times]
+        A = self.best_algorithms_ratio[self.algorithm_index] if p < 1.0 else self.best_algorithms_final_score[self.algorithm_index]
+        # p = random.choices([0.1, 0.2, 0.3, 0.4, 0.5], \
+            # weights=[20 - self.suggest_times * 4, 5 - self.suggest_times, self.suggest_times, self.suggest_times // 2, self.suggest_times // 3])[0]
+
+        self.algorithm_index = self.algorithm_index + 1 if self.algorithm_index + 1 != self.number_of_algorithms else 0
+        self.suggest_times = self.suggest_times + 1 if self.suggest_times + 1 != self.number_of_algorithms else 0
+        
+        return (A, p)
