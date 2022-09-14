@@ -342,7 +342,10 @@ if __name__ == "__main__":
     list_algorithms.sort(key=int)
 
     #=== Create files for storing output scores
-    score_file = open(os.path.join(output_dir, 'scores.txt'), 'w')
+    output_score_dir = os.path.join(output_dir, "scores/")
+    if not os.path.exists(output_score_dir):
+        os.makedirs(output_score_dir)
+    score_file = open(os.path.join(output_score_dir, 'scores.txt'), 'w')
     html_file = open(os.path.join(output_dir, 'scores.html'), 'w')
 
     ################## MAIN LOOP ##################
@@ -399,9 +402,9 @@ if __name__ == "__main__":
 
     #=== Compute average final score and average ALC
     if len(list_final_score)!=0:
-        average_final_score = round(sum(list_final_score) / len(list_datasets), 2)
+        average_final_score = round(sum(list_final_score) / len(list_datasets), 10)
     if len(list_alc)!=0:
-        average_alc = round(sum(list_alc) / len(list_datasets), 2)
+        average_alc = round(sum(list_alc) / len(list_datasets), 10)
 
     #=== Write scores.html
     write_scores_html(output_dir, output_visualizations_dir)
