@@ -1,11 +1,11 @@
-Using input_dir: /Users/cyd/Documents/GitHub/metaLC/starting_kit/sample_data/
-Using output_dir: /Users/cyd/Documents/GitHub/metaLC/starting_kit/output/
-Using train_data_dir: /Users/cyd/Documents/GitHub/metaLC/starting_kit/sample_data/train
-Using validation_data_dir: /Users/cyd/Documents/GitHub/metaLC/starting_kit/sample_data/validation
-Using test_data_dir: /Users/cyd/Documents/GitHub/metaLC/starting_kit/sample_data/test
-Using meta_features_dir: /Users/cyd/Documents/GitHub/metaLC/starting_kit/sample_data/dataset_meta_features
-Using algorithms_meta_features_dir: /Users/cyd/Documents/GitHub/metaLC/starting_kit/sample_data/algorithms_meta_features
-Using output_from_ingestion_program_dir: /Users/cyd/Documents/GitHub/metaLC/starting_kit/output/
+Using input_dir: /home/wyh/GitRepos/metalc/starting_kit/sample_data/
+Using output_dir: /home/wyh/GitRepos/metalc/starting_kit/output/
+Using train_data_dir: /home/wyh/GitRepos/metalc/starting_kit/sample_data/train
+Using validation_data_dir: /home/wyh/GitRepos/metalc/starting_kit/sample_data/validation
+Using test_data_dir: /home/wyh/GitRepos/metalc/starting_kit/sample_data/test
+Using meta_features_dir: /home/wyh/GitRepos/metalc/starting_kit/sample_data/dataset_meta_features
+Using algorithms_meta_features_dir: /home/wyh/GitRepos/metalc/starting_kit/sample_data/algorithms_meta_features
+Using output_from_ingestion_program_dir: /home/wyh/GitRepos/metalc/starting_kit/output/
 
 #====================== Results on dataset: 0 ======================#
     A    p      t R_train_A_p R_validation_A_p R_test_A_p  cumulative_t  test_score_of_best_algorithm_so_far  normalized_cumulative_t
@@ -1036,12 +1036,12 @@ alc = 0.01
 
 final score = 0.01
 
-[+] Write agent's learning curve visualizations to /Users/cyd/Documents/GitHub/metaLC/starting_kit/output/scores.html
+[+] Write agent's learning curve visualizations to /home/wyh/GitRepos/metalc/starting_kit/output/scores.html
 
 ######################################## FINAL AVERAGE RESULTS ########################################
 
-average_ALC = 0.13
+average_ALC = 0.1262
 
-average_final_score = 0.27
+average_final_score = 0.2698
 
 [+]Finished running scoring program
