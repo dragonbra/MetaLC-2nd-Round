@@ -74,6 +74,70 @@ class Agent():
         self.dataset_meta_features = dataset_meta_features
         self.algorithms_meta_features = algorithms_meta_features
 
+    def get_best_algorithm_by(self, feature_expression, datasets_meta_features, algorithms_meta_features, train_learning_curves, validation_learning_curves, test_learning_curves):
+        """
+        这个函数用于实现根据feature表达式进行排序的操作
+
+        ----------
+        feature 应该是由以下data组成的一个表达式, 使用这个表达式对算法进行排序
+        备选feature data组成: 
+        [x1: score, x2: time]  # 对应在同一个点的数据 e.g. p = 0.2 || 整体的平均
+        x3: meta_feature_0 = 0
+        x4: meta_feature_1 = 0
+        x5: meta_feature_2 = 0.1
+        """
+        #=== Init x1, x2, x3, x4, x5
+        x1, x2, x3, x4, x5 = [[0 for _ in range(self.number_of_algorithms)] for __ in range(5)]
+
+        #=== Get x1, x2
+        #=== Todo: TO BE IMPLEMENTED
+        #=== 最好在numpy.array的形式实现，最后的表达式和sort应该可以用广播特性直接表示出来？（需研究下
+
+        #=== Get x3, x4, x5
+        #=== Todo: 修改成numpy通用形式便于sort
+        for algorithm_name in algorithms_meta_features.keys():
+            algorithm_index = int(algorithm_name)
+            algorithm_meta_features = algorithms_meta_features[algorithm_name]
+            for meta_feature in algorithm_meta_features.keys():
+                if meta_feature == 'meta_feature_0':
+                    x3[algorithm_index] = algorithm_meta_features[meta_feature]
+                elif meta_feature == 'meta_feature_1':
+                    x4[algorithm_index] = algorithm_meta_features[meta_feature]
+                elif meta_feature == 'meta_feature_2':
+                    x5[algorithm_index] = algorithm_meta_features[meta_feature]
+        print(x3, '\n', x4, '\n', x5)
+
+        #=== Sort the algorithms by some features
+        for dataset_name in test_learning_curves.keys():
+            dataset = test_learning_curves[dataset_name]
+            dataset_train = train_learning_curves[dataset_name]
+            dataset_validation = validation_learning_curves[dataset_name]
+            
+            max_ratio, best_algorithm_ratio = 0, 0
+            max_final_score, best_algorithm_final_score = 0, 0
+            for alg_name in dataset.keys():
+                curve = dataset[alg_name]
+                curve_train = dataset_train[alg_name]
+                curve_validation = dataset_validation[alg_name]
+
+                idx = 1
+                if len(curve.scores) <= idx:
+                    continue
+                # select the second point to calculate
+                ratio = curve.scores[idx] / curve.times[idx] + curve_train.scores[idx] / curve_train.times[idx] \
+                    + curve_validation.scores[idx] / curve_validation.times[idx]
+                if ratio > max_ratio:
+                    max_ratio, best_algorithm_ratio = ratio, int(alg_name)
+
+                final_score = curve.scores[-1]
+                if final_score > max_final_score:
+                    max_final_score, best_algorithm_final_score = final_score, int(alg_name)
+            self.best_times_ratio[best_algorithm_ratio] += 1
+            self.best_times_final_score[best_algorithm_final_score] += 1
+
+        self.best_algorithms_ratio = sorted(range(len(self.best_times_ratio)), key=lambda k: self.best_times_ratio[k], reverse=True)
+        self.best_algorithms_final_score = sorted(range(len(self.best_times_final_score)), key=lambda k: self.best_times_final_score[k], reverse=True)
+
     def meta_train(self, datasets_meta_features, algorithms_meta_features, train_learning_curves, validation_learning_curves, test_learning_curves):
         """
         Start meta-training the agent
@@ -111,37 +175,12 @@ class Agent():
         >>> validation_learning_curves['dataset01']['0'].scores
         [0.6465293662860659, 0.6465293748988077, 0.6465293748988145, 0.6465293748988159, 0.6465293748988159]
         """
+        #=== 从dso搜索空间输出expression用于eval和排序
+        feature_expression = 0
 
-        for dataset_name in test_learning_curves.keys():
-            dataset = test_learning_curves[dataset_name]
-            dataset_train = train_learning_curves[dataset_name]
-            dataset_validation = validation_learning_curves[dataset_name]
-            
-            max_ratio, best_algorithm_ratio = 0, 0
-            max_final_score, best_algorithm_final_score = 0, 0
-            for alg_name in dataset.keys():
-                curve = dataset[alg_name]
-                curve_train = dataset_train[alg_name]
-                curve_validation = dataset_validation[alg_name]
-
-                idx = 1
-                if len(curve.scores) <= idx:
-                    continue
-                # select the second point to calculate
-                ratio = curve.scores[idx] / curve.times[idx] + curve_train.scores[idx] / curve_train.times[idx] \
-                    + curve_validation.scores[idx] / curve_validation.times[idx]
-                if ratio > max_ratio:
-                    max_ratio, best_algorithm_ratio = ratio, int(alg_name)
-
-                final_score = curve.scores[-1]
-                if final_score > max_final_score:
-                    max_final_score, best_algorithm_final_score = final_score, int(alg_name)
-            self.best_times_ratio[best_algorithm_ratio] += 1
-            self.best_times_final_score[best_algorithm_final_score] += 1
-
-        self.best_algorithms_ratio = sorted(range(len(self.best_times_ratio)), key=lambda k: self.best_times_ratio[k], reverse=True)
-        self.best_algorithms_final_score = sorted(range(len(self.best_times_final_score)), key=lambda k: self.best_times_final_score[k], reverse=True)
+        self.get_best_algorithm_by(feature_expression, datasets_meta_features, algorithms_meta_features, train_learning_curves, validation_learning_curves, test_learning_curves)
         
+        #=== Initial the p list which will be suggested by the agent
         self.p_list = [0.1, 0.1, 0.1, 0.2, 0.2, 0.3, 0.4, 0.5, 0.8, 1.0]
         for i in range(len(self.p_list), self.number_of_algorithms):
             self.p_list.append(1.0)
