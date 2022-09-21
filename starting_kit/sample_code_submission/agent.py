@@ -1,6 +1,6 @@
+from ast import Expression
 import random
 import numpy as np
-
 
 class Agent():
     def __init__(self, number_of_algorithms):
@@ -87,7 +87,7 @@ class Agent():
         x5: meta_feature_2 = 0.1
         """
         #=== Init x1, x2, x3, x4, x5
-        x1, x2, x3, x4, x5 = [[0 for _ in range(self.number_of_algorithms)] for __ in range(5)]
+        x1s, x2s, x3s, x4s, x5s = [[0 for _ in range(self.number_of_algorithms)] for __ in range(5)]
 
         #=== Get x1, x2
         #=== Todo: TO BE IMPLEMENTED
@@ -100,12 +100,12 @@ class Agent():
             algorithm_meta_features = algorithms_meta_features[algorithm_name]
             for meta_feature in algorithm_meta_features.keys():
                 if meta_feature == 'meta_feature_0':
-                    x3[algorithm_index] = algorithm_meta_features[meta_feature]
+                    x3s[algorithm_index] = float(algorithm_meta_features[meta_feature])
                 elif meta_feature == 'meta_feature_1':
-                    x4[algorithm_index] = algorithm_meta_features[meta_feature]
+                    x4s[algorithm_index] = float(algorithm_meta_features[meta_feature])
                 elif meta_feature == 'meta_feature_2':
-                    x5[algorithm_index] = algorithm_meta_features[meta_feature]
-        print(x3, '\n', x4, '\n', x5)
+                    x5s[algorithm_index] = float(algorithm_meta_features[meta_feature])
+        # print('DEBUG: ', x3s, '\n', x4s, '\n', x5s)
 
         #=== Sort the algorithms by some features
         for dataset_name in test_learning_curves.keys():
@@ -113,27 +113,38 @@ class Agent():
             dataset_train = train_learning_curves[dataset_name]
             dataset_validation = validation_learning_curves[dataset_name]
             
-            max_ratio, best_algorithm_ratio = 0, 0
-            max_final_score, best_algorithm_final_score = 0, 0
+            algorithm_metrics = [0 for _ in range(self.number_of_algorithms)]
+            final_scores = [0 for _ in range(self.number_of_algorithms)]
             for alg_name in dataset.keys():
                 curve = dataset[alg_name]
                 curve_train = dataset_train[alg_name]
                 curve_validation = dataset_validation[alg_name]
 
+                # select the second point to calculate
                 idx = 1
                 if len(curve.scores) <= idx:
                     continue
-                # select the second point to calculate
-                ratio = curve.scores[idx] / curve.times[idx] + curve_train.scores[idx] / curve_train.times[idx] \
-                    + curve_validation.scores[idx] / curve_validation.times[idx]
-                if ratio > max_ratio:
-                    max_ratio, best_algorithm_ratio = ratio, int(alg_name)
 
+                # 计算具体搜索到的表达式的值
+                # algorithm_metric = curve.scores[idx] / curve.times[idx] + curve_train.scores[idx] / curve_train.times[idx] + curve_validation.scores[idx] / curve_validation.times[idx]
+                try:
+                    x1, x2, x3, x4, x5 = curve.scores[idx], curve.times[idx], x3s[int(alg_name)], x4s[int(alg_name)], x5s[int(alg_name)]
+                    algorithm_metric = eval(feature_expression)
+                    x1, x2 = curve_train.scores[idx], curve_train.times[idx]
+                    algorithm_metric += eval(feature_expression)
+                    x1, x2 = curve_validation.scores[idx], curve_validation.times[idx]
+                    algorithm_metric += eval(feature_expression)
+                except Exception as e:
+                    continue
+
+                algorithm_metrics[int(alg_name)] = algorithm_metric
+
+                # calculate the final score best time to get rank
                 final_score = curve.scores[-1]
-                if final_score > max_final_score:
-                    max_final_score, best_algorithm_final_score = final_score, int(alg_name)
-            self.best_times_ratio[best_algorithm_ratio] += 1
-            self.best_times_final_score[best_algorithm_final_score] += 1
+                final_scores[int(alg_name)] = final_score
+
+            self.best_times_ratio[algorithm_metrics.index(max(algorithm_metrics))] += 1
+            self.best_times_final_score[final_scores.index(max(final_scores))] += 1
 
         self.best_algorithms_ratio = sorted(range(len(self.best_times_ratio)), key=lambda k: self.best_times_ratio[k], reverse=True)
         self.best_algorithms_final_score = sorted(range(len(self.best_times_final_score)), key=lambda k: self.best_times_final_score[k], reverse=True)
@@ -176,7 +187,8 @@ class Agent():
         [0.6465293662860659, 0.6465293748988077, 0.6465293748988145, 0.6465293748988159, 0.6465293748988159]
         """
         #=== 从dso搜索空间输出expression用于eval和排序
-        feature_expression = 0
+        with open('expr.txt','r') as f:
+            feature_expression = str(f.readline())
 
         self.get_best_algorithm_by(feature_expression, datasets_meta_features, algorithms_meta_features, train_learning_curves, validation_learning_curves, test_learning_curves)
         
@@ -213,7 +225,6 @@ class Agent():
         >>> action
         (9, 0.9)
         """
-        ### TO BE IMPLEMENTED ###
         if observation == None:
             self.suggest_times = 0
             self.algorithm_index = 0
