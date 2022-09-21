@@ -1,5 +1,3 @@
-from ast import Expression
-import random
 import numpy as np
 
 class Agent():
