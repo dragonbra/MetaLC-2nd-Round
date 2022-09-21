@@ -49,7 +49,7 @@ def vprint(mode, t):
     >>> vprint(False, "hello world")
 
     """
-
+    return
     if(mode):
         print(str(t))
 
@@ -67,7 +67,7 @@ def visualize_agent_learning_curve(dataset_name, total_time_budget, df_, alc):
         Data for plotting the learning curve, with columns = ['algo_index', 'algo_time_spent', 'cumulative_t', 'score']
 
     """
-
+    return
     # The dataset with only 1 action with test_score_of_best_algorithm_so_far==None will not be plotted
     df = df_[~df_['test_score_of_best_algorithm_so_far'].isin(['None'])]
 
@@ -292,7 +292,7 @@ def compute_ALC(df, total_time_budget):
                 alc += (df.iloc[i]['test_score_of_best_algorithm_so_far']-df.iloc[i-1]['test_score_of_best_algorithm_so_far']) * (1-df.iloc[i]['normalized_cumulative_t'])
             else:
                 alc += (df.iloc[i]['test_score_of_best_algorithm_so_far']-df.iloc[i-1]['test_score_of_best_algorithm_so_far']) * (total_time_budget-df.iloc[i]['cumulative_t'])
-    return round(alc, 2)
+    return round(alc, 10)
 
 if __name__ == "__main__":
     #=== Get input and output directories
@@ -345,7 +345,7 @@ if __name__ == "__main__":
     output_score_dir = os.path.join(output_dir, "scores/")
     if not os.path.exists(output_score_dir):
         os.makedirs(output_score_dir)
-    score_file = open(os.path.join(output_score_dir, 'scores.txt'), 'w')
+    score_file = open(os.path.join(output_score_dir, 'average_alc.txt'), 'w')
     html_file = open(os.path.join(output_dir, 'scores.html'), 'w')
 
     ################## MAIN LOOP ##################
@@ -397,7 +397,7 @@ if __name__ == "__main__":
         vprint(verbose, "\nfinal score = " + str(final_score))
         list_final_score.append(final_score)
 
-        updated_df.to_csv(os.path.join(output_from_ingestion_program_dir, dataset_name + '_updated.csv'), index=False)
+        # updated_df.to_csv(os.path.join(output_from_ingestion_program_dir, dataset_name + '_updated.csv'), index=False)
     #############################################
 
     #=== Compute average final score and average ALC
@@ -407,11 +407,10 @@ if __name__ == "__main__":
         average_alc = round(sum(list_alc) / len(list_datasets), 10)
 
     #=== Write scores.html
-    write_scores_html(output_dir, output_visualizations_dir)
+    # write_scores_html(output_dir, output_visualizations_dir)
 
-    #=== Write out the scores to scores.txt
-    score_file.write("average_final_score: " + str(average_final_score) + "\n")
-    score_file.write("average_ALC: " + str(average_alc) + "\n")
+    #=== Write out the scores to average_alc.txt
+    score_file.write(str(average_alc) + "\n")
     vprint(verbose, "\n######################################## FINAL AVERAGE RESULTS ########################################")
     vprint(verbose, "\naverage_ALC = " + str(average_alc))
     vprint(verbose, "\naverage_final_score = " + str(average_final_score))
