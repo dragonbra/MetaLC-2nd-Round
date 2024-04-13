@@ -174,23 +174,14 @@ class Agent():
         >>> action
         (9, 0.9)
         """
-        ### TO BE IMPLEMENTED ###
         if observation == None:
             self.suggest_times = 0
             self.algorithm_index = 0
-            # return (self.fastest_index, 0.1)
-        else:
-            # TODO: decide p
-            if not self.switch_final_score and self.p_list[self.suggest_times] == 1.0:
-                self.switch_final_score = True
-                # self.algorithm_index = 0
+        elif not self.switch_final_score and self.p_list[self.suggest_times] == 1.0:
+            self.switch_final_score = True
 
-        # print("DEBUG:", self.dataset_meta_features)
-        # A = self.best_algorithms_ratio[self.algorithm_index]
         p = self.p_list[self.suggest_times]
         A = self.best_algorithms_ratio[self.algorithm_index] if p < 1.0 else self.best_algorithms_final_score[self.algorithm_index]
-        # p = random.choices([0.1, 0.2, 0.3, 0.4, 0.5], \
-            # weights=[20 - self.suggest_times * 4, 5 - self.suggest_times, self.suggest_times, self.suggest_times // 2, self.suggest_times // 3])[0]
 
         self.algorithm_index = self.algorithm_index + 1 if self.algorithm_index + 1 != self.number_of_algorithms else 0
         self.suggest_times = self.suggest_times + 1 if self.suggest_times + 1 != self.number_of_algorithms else 0
