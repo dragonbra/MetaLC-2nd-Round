@@ -1,6 +1,8 @@
 # MetaLC-2nd-Round: GreedyAgent
-Winning method (1st place in 47 participants) in [Meta-learning from Learning Curves - 2ND ROUND competition](
+🎉Winning method (1st place in 47 participants) in [Meta-learning from Learning Curves - 2ND ROUND competition](
 https://codalab.lisn.upsaclay.fr/competitions/4894)@AutoML Conference 2022
+
+🎉\[GreedyAgent: Crafting Efficient Agents for Meta-learning from Learning Curves via Greedy Algorithm Selection\] Paper accepted by ICIC 2024! You can view it in this repo.
 
 ## GreedyAgent
 This repository provides the official python implementation of GreedyAgent.
